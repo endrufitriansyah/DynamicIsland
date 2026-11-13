@@ -1,0 +1,14 @@
+﻿# Status Implementasi â€” Dynamic Island untuk Windows
+
+| Fase | Deskripsi | Status | Catatan / Hasil Deliverable |
+| :--- | :--- | :--- | :--- |
+| **Phase 0** | Audit Lingkungan & Proyek | Selesai | Verifikasi .NET SDK 10.0.404, pemeriksaan direktori kosong, perumusan arsitektur. |
+| **Phase 1** | Fondasi Proyek & Konfigurasi | Selesai | Proyek WPF .NET 10 LTS (`net10.0-windows10.0.22621.0`), CommunityToolkit.Mvvm 8.4.2, app.manifest (PerMonitorV2), struktur folder awal, build lulus 0 error. |
+| **Phase 2** | Sistem Desain & Ikon Vektor Lucide | Selesai | Pustaka geometri ikon Lucide (`LucideIcons.xaml`), kontrol ringan `LucideIcon.cs`, token warna solid, tipografi Segoe UI Variable, gaya kontrol reusable (`Controls.xaml`), pratinjau layout Compact & Expanded, build lulus 0 error. |
+| **Phase 3** | Dynamic Island Core Shell | Selesai | Jendela melayang di atas tengah layar (`IslandWindow.xaml`), transparansi tanpa border, transisi animasi halus Compact <-> Expanded (`AnimationHelper.cs`), deteksi klik luar (auto-collapse), perbaikan satu kali klik kiri, penempatan drag natural, dan integrasi System Tray Win32 (`TrayIconService.cs`). |
+| **Phase 4** | Integrasi Sistem Windows | Selesai | Integrasi kontrol media GSMTC Windows nyata (`MediaService.cs`) dengan interpolasi durasi halus dan nama aplikasi otomatis, pemantauan CPU dan RAM via Win32 API (`SystemMonitorService.cs`), pemantauan baterai/daya laptop/desktop (`BatteryService.cs`), dan pemantauan kecepatan unduh/unggah jaringan offline (`NetworkService.cs`). Lulus uji mandiri 100%. |
+| **Phase 5** | Alat Produktivitas | Selesai | Timer Pomodoro offline (25m kerja, 5m jeda) & Stopwatch (`TimerService.cs`), Pengelola Riwayat Papan Klip lokal (`ClipboardService.cs`), Peluncur Cepat Aplikasi dengan persistensi JSON (`LauncherService.cs`), serta Kalender & Jam Bahasa Indonesia (`CalendarService.cs`). Terintegrasi penuh ke tab navigasi kartu ekspansi. Lulus uji mandiri 100%. |
+| **Phase 6** | Notifikasi Windows | Selesai | `NotificationService.cs` menggunakan `UserNotificationListener` WinRT: izin eksplisit pengguna, polling 3-detik, riwayat 30 notifikasi, dismiss per-item, hapus semua. Tab "Notif" di UI dengan badge titik merah saat notifikasi baru. Perbaikan bug launcher (full path + WorkingDirectory). Build lulus 0 error. |
+| **Phase 7** | Pengaturan & Kustomisasi | Selesai | Jendela pengaturan `SettingsWindow.xaml`, pemilihan warna aksen instan (9 palet preset), kontrol Always On Top, Auto-Collapse toggle, visibilitas modul, startup Windows (default nonaktif), dan persistensi `%APPDATA%\DynamicIsland\settings.json`. Build lulus 0 error. |
+| **Phase 8** | Pengujian & Rilis | Selesai | Validasi multi-monitor WorkArea, DPI awareness PerMonitorV2 terverifikasi, alokasi memori awal managed sangat hemat (<1 MB), kompilasi Release build sukses (`publish/DynamicIsland.exe`). Seluruh 8 Fase selesai 100%. |
+

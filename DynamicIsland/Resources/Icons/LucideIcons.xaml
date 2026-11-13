@@ -1,0 +1,154 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Lucide Vector Geometries (ViewBox: 0 0 24 24) -->
+
+    <!-- Music 2 -->
+    <GeometryGroup x:Key="IconGeometryMusic">
+        <EllipseGeometry Center="8,18" RadiusX="4" RadiusY="4"/>
+        <PathGeometry Figures="M12,18 V2 L19,6"/>
+    </GeometryGroup>
+
+    <!-- Play -->
+    <PathGeometry x:Key="IconGeometryPlay" Figures="M6,3 L20,12 L6,21 Z"/>
+
+    <!-- Pause -->
+    <GeometryGroup x:Key="IconGeometryPause">
+        <RectangleGeometry Rect="6,4,4,16" RadiusX="1" RadiusY="1"/>
+        <RectangleGeometry Rect="14,4,4,16" RadiusX="1" RadiusY="1"/>
+    </GeometryGroup>
+
+    <!-- Skip Back -->
+    <GeometryGroup x:Key="IconGeometrySkipBack">
+        <PathGeometry Figures="M19,20 L9,12 L19,4 Z"/>
+        <LineGeometry StartPoint="5,19" EndPoint="5,5"/>
+    </GeometryGroup>
+
+    <!-- Skip Forward -->
+    <GeometryGroup x:Key="IconGeometrySkipForward">
+        <PathGeometry Figures="M5,4 L15,12 L5,20 Z"/>
+        <LineGeometry StartPoint="19,5" EndPoint="19,19"/>
+    </GeometryGroup>
+
+    <!-- Battery Full -->
+    <GeometryGroup x:Key="IconGeometryBattery">
+        <RectangleGeometry Rect="2,7,16,10" RadiusX="2" RadiusY="2"/>
+        <LineGeometry StartPoint="22,11" EndPoint="22,13"/>
+    </GeometryGroup>
+
+    <!-- Battery Charging -->
+    <GeometryGroup x:Key="IconGeometryBatteryCharging">
+        <PathGeometry Figures="M15,7 H16 A2,2 0 0 1 18,9 V15 A2,2 0 0 1 16,17 H14"/>
+        <PathGeometry Figures="M6,7 H4 A2,2 0 0 0 2,9 V15 A2,2 0 0 0 4,17 H5"/>
+        <PathGeometry Figures="M11,7 L8,12 H12 L9,17"/>
+        <LineGeometry StartPoint="22,11" EndPoint="22,13"/>
+    </GeometryGroup>
+
+    <!-- CPU -->
+    <GeometryGroup x:Key="IconGeometryCpu">
+        <RectangleGeometry Rect="4,4,16,16" RadiusX="2" RadiusY="2"/>
+        <RectangleGeometry Rect="9,9,6,6" RadiusX="1" RadiusY="1"/>
+        <LineGeometry StartPoint="15,2" EndPoint="15,4"/>
+        <LineGeometry StartPoint="15,20" EndPoint="15,22"/>
+        <LineGeometry StartPoint="2,15" EndPoint="4,15"/>
+        <LineGeometry StartPoint="2,9" EndPoint="4,9"/>
+        <LineGeometry StartPoint="20,15" EndPoint="22,15"/>
+        <LineGeometry StartPoint="20,9" EndPoint="22,9"/>
+        <LineGeometry StartPoint="9,2" EndPoint="9,4"/>
+        <LineGeometry StartPoint="9,20" EndPoint="9,22"/>
+    </GeometryGroup>
+
+    <!-- Network / Wifi -->
+    <GeometryGroup x:Key="IconGeometryWifi">
+        <EllipseGeometry Center="12,20" RadiusX="0.5" RadiusY="0.5"/>
+        <PathGeometry Figures="M2,8.82 A15,15 0 0 1 22,8.82"/>
+        <PathGeometry Figures="M5,12.86 A10,10 0 0 1 19,12.86"/>
+        <PathGeometry Figures="M8.5,16.43 A5,5 0 0 1 15.5,16.43"/>
+    </GeometryGroup>
+
+    <!-- Notification / Bell -->
+    <GeometryGroup x:Key="IconGeometryBell">
+        <PathGeometry Figures="M6,8 A6,6 0 0 1 18,8 C18,15 21,17 21,17 H3 C3,17 6,15 6,8 Z"/>
+        <PathGeometry Figures="M10.3,21 A1.94,1.94 0 0 0 13.7,21"/>
+    </GeometryGroup>
+
+    <!-- Timer -->
+    <GeometryGroup x:Key="IconGeometryTimer">
+        <LineGeometry StartPoint="10,2" EndPoint="14,2"/>
+        <LineGeometry StartPoint="12,14" EndPoint="15,11"/>
+        <EllipseGeometry Center="12,14" RadiusX="8" RadiusY="8"/>
+    </GeometryGroup>
+
+    <!-- Clipboard -->
+    <GeometryGroup x:Key="IconGeometryClipboard">
+        <RectangleGeometry Rect="8,2,8,4" RadiusX="1" RadiusY="1"/>
+        <PathGeometry Figures="M16,4 H18 A2,2 0 0 1 20,6 V20 A2,2 0 0 1 18,22 H6 A2,2 0 0 1 4,20 V6 A2,2 0 0 1 6,4 H8"/>
+    </GeometryGroup>
+
+    <!-- Settings -->
+    <GeometryGroup x:Key="IconGeometrySettings">
+        <PathGeometry Figures="M12.22,2 H11.78 A2,2 0 0 0 9.78,4 V4.18 A2,2 0 0 1 8.78,5.91 L8.35,6.16 A2,2 0 0 1 6.35,6.16 L6.2,6.08 A2,2 0 0 0 3.47,6.81 L3.25,7.19 A2,2 0 0 0 3.98,9.92 L4.13,10.02 A2,2 0 0 1 5.13,11.74 V12.25 A2,2 0 0 1 4.13,13.99 L3.98,14.08 A2,2 0 0 0 3.25,16.81 L3.47,17.19 A2,2 0 0 0 6.2,17.92 L6.35,17.84 A2,2 0 0 1 8.35,17.84 L8.78,18.09 A2,2 0 0 1 9.78,19.82 V20 A2,2 0 0 0 11.78,22 H12.22 A2,2 0 0 0 14.22,20 V19.82 A2,2 0 0 1 15.22,18.09 L15.65,17.84 A2,2 0 0 1 17.65,17.84 L17.8,17.92 A2,2 0 0 0 20.53,17.19 L20.75,16.81 A2,2 0 0 0 20.02,14.08 L19.87,13.99 A2,2 0 0 1 18.87,12.25 V11.75 A2,2 0 0 1 19.87,10.01 L20.02,9.92 A2,2 0 0 0 20.75,7.19 L20.53,6.81 A2,2 0 0 0 17.8,6.08 L17.65,6.16 A2,2 0 0 1 15.65,6.16 L15.22,5.91 A2,2 0 0 1 14.22,4.18 V4 A2,2 0 0 0 12.22,2 Z"/>
+        <EllipseGeometry Center="12,12" RadiusX="3" RadiusY="3"/>
+    </GeometryGroup>
+
+    <!-- App Window / Launcher -->
+    <GeometryGroup x:Key="IconGeometryLauncher">
+        <RectangleGeometry Rect="2,4,20,16" RadiusX="2" RadiusY="2"/>
+        <LineGeometry StartPoint="10,4" EndPoint="10,8"/>
+        <LineGeometry StartPoint="2,8" EndPoint="22,8"/>
+        <LineGeometry StartPoint="6,4" EndPoint="6,8"/>
+    </GeometryGroup>
+
+    <!-- Calendar Days -->
+    <GeometryGroup x:Key="IconGeometryCalendar">
+        <LineGeometry StartPoint="8,2" EndPoint="8,6"/>
+        <LineGeometry StartPoint="16,2" EndPoint="16,6"/>
+        <RectangleGeometry Rect="3,4,18,18" RadiusX="2" RadiusY="2"/>
+        <LineGeometry StartPoint="3,10" EndPoint="21,10"/>
+        <EllipseGeometry Center="8,14" RadiusX="0.5" RadiusY="0.5"/>
+        <EllipseGeometry Center="12,14" RadiusX="0.5" RadiusY="0.5"/>
+        <EllipseGeometry Center="16,14" RadiusX="0.5" RadiusY="0.5"/>
+        <EllipseGeometry Center="8,18" RadiusX="0.5" RadiusY="0.5"/>
+        <EllipseGeometry Center="12,18" RadiusX="0.5" RadiusY="0.5"/>
+        <EllipseGeometry Center="16,18" RadiusX="0.5" RadiusY="0.5"/>
+    </GeometryGroup>
+
+    <!-- Download -->
+    <GeometryGroup x:Key="IconGeometryDownload">
+        <PathGeometry Figures="M21,15 V19 A2,2 0 0 1 19,21 H5 A2,2 0 0 1 3,19 V15"/>
+        <PathGeometry Figures="M7,10 L12,15 L17,10"/>
+        <LineGeometry StartPoint="12,15" EndPoint="12,3"/>
+    </GeometryGroup>
+
+    <!-- Volume 2 -->
+    <GeometryGroup x:Key="IconGeometryVolume">
+        <PathGeometry Figures="M11,5 L6,9 H2 V15 H6 L11,19 Z"/>
+        <PathGeometry Figures="M15.54,8.46 A5,5 0 0 1 15.54,15.53"/>
+        <PathGeometry Figures="M19.07,4.93 A10,10 0 0 1 19.07,19.07"/>
+    </GeometryGroup>
+
+    <!-- Search -->
+    <GeometryGroup x:Key="IconGeometrySearch">
+        <EllipseGeometry Center="11,11" RadiusX="8" RadiusY="8"/>
+        <LineGeometry StartPoint="21,21" EndPoint="16.65,16.65"/>
+    </GeometryGroup>
+
+    <!-- Close / X -->
+    <GeometryGroup x:Key="IconGeometryClose">
+        <LineGeometry StartPoint="18,6" EndPoint="6,18"/>
+        <LineGeometry StartPoint="6,6" EndPoint="18,18"/>
+    </GeometryGroup>
+
+    <!-- Chevron Down -->
+    <PathGeometry x:Key="IconGeometryChevronDown" Figures="M6,9 L12,15 L18,9"/>
+
+    <!-- Chevron Up -->
+    <PathGeometry x:Key="IconGeometryChevronUp" Figures="M18,15 L12,9 L6,15"/>
+
+    <!-- Rotate / Refresh -->
+    <GeometryGroup x:Key="IconGeometryRefresh">
+        <PathGeometry Figures="M21,12 A9,9 0 1 1 12,3 C14.52,3 16.93,4 18.74,5.74 L21,8"/>
+        <PathGeometry Figures="M21,3 V8 H16"/>
+    </GeometryGroup>
+
+</ResourceDictionary>

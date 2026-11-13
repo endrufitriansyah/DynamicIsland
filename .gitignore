@@ -1,0 +1,54 @@
+# ==========================================
+# .gitignore for Dynamic Island (WPF .NET 10)
+# ==========================================
+
+# Build & Compilation Artifacts
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Publish & Installer Outputs
+publish/
+publish-self-contained/
+installer-output/
+*.exe
+*.dll
+*.pdb
+*.msi
+*.msix
+*.appx
+
+# Visual Studio & IDE files
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# .NET / MSBuild
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+.nuget/
+
+# OS Generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary & Environment Secrets
+*.tmp
+*.temp
+*.log
+.env
+.env.local
+.env.*.local
+*.pfx
+*.snk

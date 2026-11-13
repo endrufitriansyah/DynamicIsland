@@ -1,0 +1,167 @@
+<Window x:Class="DynamicIsland.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:DynamicIsland.Controls"
+        Title="Pengaturan Dynamic Island"
+        Width="500"
+        Height="540"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize">
+
+    <Border Background="{StaticResource BrushPrimaryBackground}"
+            BorderBrush="{StaticResource BrushBorder}"
+            BorderThickness="1"
+            CornerRadius="12">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/> <!-- Title Bar -->
+                <RowDefinition Height="*"/>    <!-- Settings Body -->
+                <RowDefinition Height="Auto"/> <!-- Bottom Actions -->
+            </Grid.RowDefinitions>
+
+            <!-- Custom Title Bar -->
+            <Grid Grid.Row="0" Margin="0,0,0,16" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <controls:LucideIcon Kind="Settings" Size="16" Foreground="{StaticResource BrushAccent}" Margin="0,0,8,0"/>
+                    <TextBlock Text="Pengaturan Dynamic Island" Style="{StaticResource TextHeader}"/>
+                </StackPanel>
+
+                <Button Grid.Column="2"
+                        Style="{StaticResource IconButton}"
+                        Width="28" Height="28"
+                        Click="BtnClose_Click">
+                    <controls:LucideIcon Kind="Close" Size="14"/>
+                </Button>
+            </Grid>
+
+            <!-- Settings Content (Scrollable) -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,0,0,12">
+                <StackPanel>
+                    <!-- 1. TEMA & WARNA AKSEN -->
+                    <Border Style="{StaticResource FlatCard}" Padding="12" Margin="0,0,0,12">
+                        <StackPanel>
+                            <TextBlock Text="Warna Aksen Antarmuka" Style="{StaticResource TextBody}" FontWeight="SemiBold"/>
+                            <TextBlock Text="Pilih warna aksen untuk menyorot ikon, badge, dan kontrol aktif." Style="{StaticResource TextCaption}" Foreground="{StaticResource BrushMutedText}" Margin="0,2,0,8"/>
+
+                            <ItemsControl ItemsSource="{Binding ColorOptions}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Style="{StaticResource FlatButton}"
+                                                Padding="6,4"
+                                                Margin="0,0,6,6"
+                                                Command="{Binding DataContext.SelectColorCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                CommandParameter="{Binding Hex}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border Width="12" Height="12" CornerRadius="6" Margin="0,0,6,0">
+                                                    <Border.Background>
+                                                        <SolidColorBrush Color="{Binding Hex}"/>
+                                                    </Border.Background>
+                                                </Border>
+                                                <TextBlock Text="{Binding Name}" Style="{StaticResource TextCaption}"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- 2. PERILAKU ISLAND -->
+                    <Border Style="{StaticResource FlatCard}" Padding="12" Margin="0,0,0,12">
+                        <StackPanel>
+                            <TextBlock Text="Perilaku Jendela" Style="{StaticResource TextBody}" FontWeight="SemiBold"/>
+                            <TextBlock Text="Sesuaikan cara Island berinteraksi dengan layar desktop Anda." Style="{StaticResource TextCaption}" Foreground="{StaticResource BrushMutedText}" Margin="0,2,0,8"/>
+
+                            <!-- Always On Top -->
+                            <CheckBox IsChecked="{Binding AlwaysOnTop}"
+                                      Command="{Binding SaveCurrentCommand}"
+                                      Margin="0,0,0,8"
+                                      Foreground="{StaticResource BrushPrimaryText}">
+                                <TextBlock Text="Selalu di Atas (Always On Top)" Style="{StaticResource TextBody}"/>
+                            </CheckBox>
+
+                            <!-- Auto Collapse -->
+                            <CheckBox IsChecked="{Binding AutoCollapse}"
+                                      Command="{Binding SaveCurrentCommand}"
+                                      Margin="0,0,0,8"
+                                      Foreground="{StaticResource BrushPrimaryText}">
+                                <TextBlock Text="Otomatis Ciutkan Saat Klik Luar (Auto-Collapse)" Style="{StaticResource TextBody}"/>
+                            </CheckBox>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- 3. MODUL FITUR AKTIF -->
+                    <Border Style="{StaticResource FlatCard}" Padding="12" Margin="0,0,0,12">
+                        <StackPanel>
+                            <TextBlock Text="Tampilan Tab Modul" Style="{StaticResource TextBody}" FontWeight="SemiBold"/>
+                            <TextBlock Text="Aktifkan atau sembunyikan modul tertentu pada kartu ekspansi." Style="{StaticResource TextCaption}" Foreground="{StaticResource BrushMutedText}" Margin="0,2,0,8"/>
+
+                            <UniformGrid Columns="2">
+                                <CheckBox IsChecked="{Binding EnableMediaModule}" Command="{Binding SaveCurrentCommand}" Margin="0,0,0,6" Foreground="{StaticResource BrushPrimaryText}">
+                                    <TextBlock Text="Pemutar Musik" Style="{StaticResource TextBody}"/>
+                                </CheckBox>
+                                <CheckBox IsChecked="{Binding EnableSystemModule}" Command="{Binding SaveCurrentCommand}" Margin="0,0,0,6" Foreground="{StaticResource BrushPrimaryText}">
+                                    <TextBlock Text="Monitor Sistem" Style="{StaticResource TextBody}"/>
+                                </CheckBox>
+                                <CheckBox IsChecked="{Binding EnableTimerModule}" Command="{Binding SaveCurrentCommand}" Margin="0,0,0,6" Foreground="{StaticResource BrushPrimaryText}">
+                                    <TextBlock Text="Timer &amp; Pomodoro" Style="{StaticResource TextBody}"/>
+                                </CheckBox>
+                                <CheckBox IsChecked="{Binding EnableClipboardModule}" Command="{Binding SaveCurrentCommand}" Margin="0,0,0,6" Foreground="{StaticResource BrushPrimaryText}">
+                                    <TextBlock Text="Papan Klip" Style="{StaticResource TextBody}"/>
+                                </CheckBox>
+                                <CheckBox IsChecked="{Binding EnableLauncherModule}" Command="{Binding SaveCurrentCommand}" Margin="0,0,0,6" Foreground="{StaticResource BrushPrimaryText}">
+                                    <TextBlock Text="Peluncur Cepat" Style="{StaticResource TextBody}"/>
+                                </CheckBox>
+                                <CheckBox IsChecked="{Binding EnableNotifModule}" Command="{Binding SaveCurrentCommand}" Margin="0,0,0,6" Foreground="{StaticResource BrushPrimaryText}">
+                                    <TextBlock Text="Notifikasi" Style="{StaticResource TextBody}"/>
+                                </CheckBox>
+                            </UniformGrid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- 4. STARTUP WINDOWS -->
+                    <Border Style="{StaticResource FlatCard}" Padding="12">
+                        <StackPanel>
+                            <TextBlock Text="Mulai Otomatis" Style="{StaticResource TextBody}" FontWeight="SemiBold"/>
+                            <TextBlock Text="Jalankan Dynamic Island secara otomatis saat Windows menyala." Style="{StaticResource TextCaption}" Foreground="{StaticResource BrushMutedText}" Margin="0,2,0,8"/>
+
+                            <CheckBox IsChecked="{Binding RunAtStartup}"
+                                      Command="{Binding SaveCurrentCommand}"
+                                      Foreground="{StaticResource BrushPrimaryText}">
+                                <TextBlock Text="Jalankan Saat Windows Startup (Default: Nonaktif)" Style="{StaticResource TextBody}"/>
+                            </CheckBox>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Bottom Action Buttons -->
+            <Grid Grid.Row="2">
+                <Button Content="Reset ke Bawaan"
+                        Style="{StaticResource FlatButton}"
+                        HorizontalAlignment="Left"
+                        Command="{Binding ResetDefaultsCommand}"/>
+
+                <Button Content="Selesai"
+                        Style="{StaticResource AccentButton}"
+                        HorizontalAlignment="Right"
+                        Width="100"
+                        Click="BtnClose_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
