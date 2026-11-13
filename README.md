@@ -4,7 +4,7 @@ Aplikasi pendamping desktop Windows yang ringan, elegan, dan kaya fitur, terinsp
 
 ---
 
-## 📌 Tujuan & Konsep
+##  Tujuan & Konsep
 
 Dynamic Island di Windows dirancang sebagai pusat kendali interaktif yang melayang di bagian atas layar desktop. Tujuannya adalah menghadirkan informasi penting serta kontrol produktivitas secara instan tanpa mengganggu fokus kerja pengguna:
 
@@ -14,7 +14,7 @@ Dynamic Island di Windows dirancang sebagai pusat kendali interaktif yang melaya
 
 ---
 
-## ✨ Fitur yang Sudah Diimplementasikan
+## Fitur yang Sudah Diimplementasikan
 
 Semua fitur di bawah ini telah selesai dibangun dan teruji secara menyeluruh:
 
@@ -48,7 +48,7 @@ Semua fitur di bawah ini telah selesai dibangun dan teruji secara menyeluruh:
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 | Komponen | Spesifikasi / Pustaka |
 |---|---|
@@ -91,7 +91,7 @@ PROJECT/
 
 ---
 
-## 💻 Persyaratan Sistem
+## Persyaratan Sistem
 
 - **Sistem Operasi**: Windows 11 64-bit (Build 22000 ke atas) atau Windows 10 64-bit (Build 19041 ke atas).
 - **Arsitektur**: x64 (AMD64 / Intel 64-bit).
@@ -100,7 +100,7 @@ PROJECT/
 
 ---
 
-## 🚀 Cara Menjalankan dari Source Code
+## Cara Menjalankan dari Source Code
 
 Pastikan .NET 10.0 SDK sudah terpasang di komputer Anda.
 
@@ -115,7 +115,7 @@ Pastikan .NET 10.0 SDK sudah terpasang di komputer Anda.
 
 ---
 
-## 📦 Cara Build & Publish
+##  Cara Build & Publish
 
 Untuk menghasilkan rilis mandiri (**Self-Contained**) yang siap dijalankan di komputer mana saja tanpa perlu menginstal .NET Runtime:
 
@@ -128,7 +128,7 @@ Hasil publish akan berada di folder `PROJECT/publish-self-contained` dengan selu
 
 ---
 
-## 💿 Cara Membuat Installer Windows
+##  Cara Membuat Installer Windows
 
 Proyek ini telah dilengkapi dengan script Inno Setup untuk membuat file setup instalasi mandiri:
 
@@ -143,7 +143,7 @@ Proyek ini telah dilengkapi dengan script Inno Setup untuk membuat file setup in
 
 ---
 
-## 🤝 Kontribusi & Lisensi
+##  Kontribusi & Lisensi
 
 - **Kontribusi**: Kontribusi terbuka bagi siapa saja yang ingin memperbaiki bug, mengoptimalkan animasi, maupun menambahkan modul produktivitas baru. Silakan buat *Issue* atau kirimkan *Pull Request*.
 - **Lisensi**: Proyek ini dirilis di bawah lisensi open source [MIT License](LICENSE) (atau lisensi default pengembang). Bebas digunakan, dipelajari, dan dimodifikasi untuk kebutuhan pribadi maupun komersial.
